@@ -2,7 +2,6 @@ package vehicle;
 
 import org.junit.Before;
 import org.junit.Test;
-import vehicle.vehicleType.EngineType;
 import vehicle.vehicleType.Petrol;
 import vehicle.vehicleType.TyreType;
 
@@ -43,7 +42,7 @@ public class VehicleTest {
     }
 
     @Test
-    public void hasPetrolEnging() {
+    public void hasPetrolEngine() {
         assertEquals("Petrol", vehicle.getFuelSource());
     }
 }
