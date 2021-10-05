@@ -1,8 +1,9 @@
+import behaviours.IBuyable;
 import vehicle.Vehicle;
 
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer implements IBuyable {
 
     private String name;
     private Double budget;
@@ -27,11 +28,18 @@ public class Customer {
         return vehicles;
     }
 
-    public void setBudget(Double budget) {
-        this.budget = budget;
+    public void setBudget(Vehicle vehicle) {
+        this.budget -= vehicle.getPrice();
     }
 
     public void addVehicles(Vehicle vehicle) {
         vehicles.add(vehicle);
+    }
+
+    public void buyVehicle(Vehicle vehicle) {
+        if(this.budget >= vehicle.getPrice()) {
+            addVehicles(vehicle);
+            setBudget(vehicle);
+        }
     }
 }

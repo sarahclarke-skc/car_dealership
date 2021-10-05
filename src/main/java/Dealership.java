@@ -1,8 +1,9 @@
+import behaviours.IBuyable;
 import vehicle.Vehicle;
 
 import java.util.ArrayList;
 
-public class Dealership {
+public class Dealership implements IBuyable {
 
     private String name;
     private Double till;
@@ -30,8 +31,38 @@ public class Dealership {
         this.till = till;
     }
 
-    public void setVehicleArrayList(ArrayList<Vehicle> vehicleArrayList) {
-        this.vehicleArrayList = vehicleArrayList;
+    public void vehiclePurchase(Vehicle vehicle) {
+        this.till -= vehicle.getPrice();
+    }
+
+    public void vehicleSale(int index) {
+        till += vehicleArrayList.get(index).getPrice();
+    }
+
+    public void addVehiclesToArrayList(Vehicle vehicle) {
+        this.vehicleArrayList.add(vehicle);
+    }
+
+    public void buyVehicle(Vehicle vehicle) {
+        if (till >= vehicle.getPrice()) {
+            vehiclePurchase(vehicle);
+            addVehiclesToArrayList(vehicle);
+        }
+    }
+
+    public void removeVehicleFromArrayList(int index) {
+        vehicleArrayList.remove(index);
+    }
+
+    public void sellVehicle(int index) {
+        vehicleSale(index);
+        removeVehicleFromArrayList(index);
+    }
+
+    public void sellVehicleToCustomer(IBuyable customer, int index) {
+        customer.buyVehicle(getVehicleArrayList().get(index));
+        this.sellVehicle(index);
+
     }
 }
 
