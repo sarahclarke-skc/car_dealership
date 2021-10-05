@@ -69,4 +69,7 @@ public class DealershipTest {
         assertEquals(175000.00, customer.getBudget(), 0.001);
         assertEquals(175000.00, dealership.getTill(), 0.001);
     }
+
+    @Test
+    public void dealershipRepairsVehicle
 }

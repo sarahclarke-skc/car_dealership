@@ -48,4 +48,8 @@ public abstract class Vehicle {
     }
 
     public abstract String getFuelSource();
+
+    public void vehicleGetsDamaged(double damageCost) {
+        this.price -= damageCost;
+    }
 }

@@ -62,7 +62,8 @@ public class Dealership implements IBuyable {
     public void sellVehicleToCustomer(IBuyable customer, int index) {
         customer.buyVehicle(getVehicleArrayList().get(index));
         this.sellVehicle(index);
-
     }
+
+
 }
 

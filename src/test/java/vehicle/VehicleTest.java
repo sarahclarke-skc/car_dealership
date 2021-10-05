@@ -45,4 +45,10 @@ public class VehicleTest {
     public void hasPetrolEngine() {
         assertEquals("Petrol", vehicle.getFuelSource());
     }
+
+    @Test
+    public void decreasesValueAfterDamage() {
+        vehicle.vehicleGetsDamaged(500.00);
+        assertEquals(5500.00, vehicle.getPrice(),0.001);
+    }
 }
