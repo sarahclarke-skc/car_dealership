@@ -2,10 +2,10 @@ package vehicle.vehicleType;
 
 public enum EngineType {
 
-    PETROL("petrol"),
-    DIESEL("diesel"),
-    ELECTRIC("electricity"),
-    HYBRID("petrol and electricity");
+    PETROL("Petrol"),
+    DIESEL("Diesel"),
+    ELECTRIC("Electricity"),
+    HYBRID("Petrol and Electricity");
 
     private String fuelSource;
 
