@@ -10,6 +10,7 @@ public abstract class Vehicle {
     private int year;
     private double price;
     private TyreType tyreType;
+    private double originalPrice;
 
     public Vehicle(String make, String model, int year, double price, TyreType tyreType) {
         this.make = make;
@@ -17,6 +18,7 @@ public abstract class Vehicle {
         this.year = year;
         this.price = price;
         this.tyreType = tyreType;
+        this.originalPrice = originalPrice;
     }
 
     public String getMake() {
@@ -35,6 +37,10 @@ public abstract class Vehicle {
         return price;
     }
 
+    public double getOriginalPrice() {
+        return originalPrice;
+    }
+
     public TyreType getTyreType() {
         return tyreType;
     }
@@ -50,6 +56,7 @@ public abstract class Vehicle {
     public abstract String getFuelSource();
 
     public void vehicleGetsDamaged(double damageCost) {
+        this.originalPrice = this.price;
         this.price -= damageCost;
     }
 }

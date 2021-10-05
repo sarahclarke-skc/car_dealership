@@ -71,5 +71,11 @@ public class DealershipTest {
     }
 
     @Test
-    public void dealershipRepairsVehicle
+    public void dealershipRepairsVehicle() {
+        dealership.addVehiclesToArrayList(vehicle);
+        dealership.getVehicleArrayList().get(0).vehicleGetsDamaged(20000.00);
+        dealership.repairVehicle(0);
+        assertEquals(80000.00, dealership.getTill(), 0.001);
+        assertEquals(75000.00, vehicle.getPrice(), 0.001);
+    }
 }

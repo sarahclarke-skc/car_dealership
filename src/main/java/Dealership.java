@@ -64,6 +64,9 @@ public class Dealership implements IBuyable {
         this.sellVehicle(index);
     }
 
-
+    public void repairVehicle(int index) {
+        till -= (vehicleArrayList.get(index).getOriginalPrice()-vehicleArrayList.get(index).getPrice());
+        vehicleArrayList.get(index).setPrice(vehicleArrayList.get(index).getOriginalPrice());
+    }
 }
 
